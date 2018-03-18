@@ -12,6 +12,7 @@
         "symfony/console": "*",
         "ramsey/uuid": "*",
         "dflydev/doctrine-orm-service-provider": "^2.0",
+        "doctrine/dbal": "~2.3",
         "firebase/php-jwt": "^5.0"
     },
     "require-dev": {

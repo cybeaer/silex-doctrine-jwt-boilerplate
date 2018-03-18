@@ -17,7 +17,7 @@ $app->register(new DoctrineORMServiceProvider(), array(
     'db.orm.entities'              => array(array(
         'type'      => 'annotation',
         'path'      => __DIR__.'/../Entity',
-        'namespace' => 'Entity',
+        'namespace' => 'mgcom\Entity',
     )),
 ));
 

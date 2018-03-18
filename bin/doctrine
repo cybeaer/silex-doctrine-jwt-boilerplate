@@ -1,0 +1,17 @@
+#!/usr/bin/env php7
+<?php
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Setup;
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+$config = Setup::createAnnotationMetadataConfiguration(array("./src/Entity"), true);
+try {
+    $entityManager = EntityManager::create(require __DIR__ . '/../src/Config/db.php', $config);
+} catch (Exception $e){
+    print_r($e->getMessage());
+}
+$helperSet = ConsoleRunner::createHelperSet($entityManager);
+
+ConsoleRunner::run($helperSet);

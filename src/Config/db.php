@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'driver' => 'pdo_sqlite',
+    'path' => __DIR__ . '/db.sqlite',
+    /*
     'driver'        => 'pdo_mysql',
     'host'          => 'localhost',
     'dbname'        => 'sample',
@@ -10,4 +13,5 @@ return [
     'driverOptions' => [
         1002 => 'SET NAMES utf8',
     ],
+    */
 ];

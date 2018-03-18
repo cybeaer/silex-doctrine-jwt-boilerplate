@@ -3,9 +3,10 @@ use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\ORMException;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 
-// replace with file to your own project bootstrap
-require_once './vendor/autoload.php';
+$loader = require './vendor/autoload.php';
+AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 
 $config = new Configuration();
 $driverImpl = $config->newDefaultAnnotationDriver(array(
@@ -18,17 +19,7 @@ $config->setProxyNamespace('Proxies');
 
 try {
     $entityManager = EntityManager::create(
-        [
-            'driver' => 'pdo_mysql',
-            'host' => 'localhost',
-            'dbname' => 'sample',
-            'user' => 'root',
-            'password' => 'admin',
-            'charset' => 'utf8',
-            'driverOptions' => [
-                1002 => 'SET NAMES utf8',
-            ],
-        ],
+        require (__DIR__.'/src/Config/db.php'),
         $config
     );
 } catch (ORMException $e ){

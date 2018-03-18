@@ -6,7 +6,7 @@ use Doctrine\ORM\Tools\Setup;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$config = Setup::createAnnotationMetadataConfiguration(array("./src/Entity"), true);
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."./../src/Entity"), true);
 try {
     $entityManager = EntityManager::create(require __DIR__ . '/../src/Config/db.php', $config);
 } catch (Exception $e){

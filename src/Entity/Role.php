@@ -4,32 +4,32 @@ namespace mgcom\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
- * @ORM\Table(name="role")
+ * @Entity()
+ * @Table(name="role")
  */
 class Role {
     /**
      * @var string
      *
-     * @ORM\uuid()
-     * @ORM\GeneratedValue(strategy="UUID")
-     * @ORM\Column(name="uuid", type="guid", unique=true, nullable=false)
+     * @id()
+     * @GeneratedValue(strategy="UUID")
+     * @Column(name="id", type="guid", unique=true, nullable=false)
      */
-    private $uuid;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\name()
-     * @ORM\Column(name="name", type="string", unique=true, nullable=false)
+     * @name()
+     * @Column(name="name", type="string", unique=true, nullable=false)
      */
     private $name;
 
     /**
      * @return string
      */
-    public function getUuid(){
-        return $this->uuid;
+    public function getId(){
+        return $this->id;
     }
 
     /**

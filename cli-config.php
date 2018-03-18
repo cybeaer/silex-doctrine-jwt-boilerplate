@@ -1,9 +1,9 @@
 <?php
+use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\ORMException;
-use Doctrine\Common\Annotations\AnnotationRegistry;
 
 $loader = require './vendor/autoload.php';
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
@@ -13,7 +13,6 @@ $driverImpl = $config->newDefaultAnnotationDriver(array(
     __DIR__.'/src',
 ));
 $config->setMetadataDriverImpl($driverImpl);
-//$config->setProxyDir($app['orm.proxies_dir']);
 $config->setProxyDir( __DIR__.'/src/Entity/Proxy');
 $config->setProxyNamespace('Proxies');
 

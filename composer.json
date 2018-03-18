@@ -1,0 +1,25 @@
+{
+    "name": "mgcom/backend",
+    "authors": [
+        {
+            "name": "Michael Attenberger",
+            "email": "attenberger@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex": "~2.0",
+        "symfony/config": "*",
+        "symfony/console": "*",
+        "ramsey/uuid": "*",
+        "dflydev/doctrine-orm-service-provider": "*"
+    },
+    "require-dev": {
+        "raveren/kint": "^1.1",
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "mgcom\\": "src/"
+        }
+    }
+}

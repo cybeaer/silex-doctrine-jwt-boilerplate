@@ -17,10 +17,10 @@ $app->register(new DoctrineORMServiceProvider(), array(
     'db.orm.entities'              => array(array(
         'type'      => 'annotation',
         'path'      => __DIR__.'/../Entity',
-        'namespace' => 'mgcom\Entity',
+        'namespace' => 'App\Entity',
     )),
 ));
 
-$app->mount('/', new mgcom\GlobalRouter());
+$app->mount('/', new App\GlobalRouter());
 
 return $app;

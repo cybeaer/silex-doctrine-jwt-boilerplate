@@ -1,5 +1,5 @@
 <?php
-namespace mgcom\Controller {
+namespace App\Controller {
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;

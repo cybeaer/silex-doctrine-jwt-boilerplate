@@ -1,5 +1,5 @@
 {
-    "name": "mgcom/backend",
+    "name": "App/backend"
     "authors": [
         {
             "name": "Michael Attenberger",
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "mgcom\\": "src/"
+            "App\\": "src/"
         }
     }
 }

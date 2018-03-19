@@ -1,5 +1,5 @@
 <?php
-namespace mgcom;
+namespace App;
 
 use Silex\Api\ControllerProviderInterface;
 use Silex\Application;
@@ -11,7 +11,7 @@ class GlobalRouter implements ControllerProviderInterface{
     {
         $controller = $app['controllers_factory'];
 
-        $controller->get('/','mgcom\Controller\AppController::index')->bind('baseurl');
+        $controller->get('/','App\Controller\AppController::index')->bind('baseurl');
 
         $app->error(function (\Exception $e, Request $request, $code) {
             return new Response('No Content', $code);
